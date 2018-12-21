@@ -2,8 +2,10 @@
 Web Design collections for teaching Secondary Students @MIS
 
 Marcom: Subscribe newsletter page
+
 In this tutorial, we're not using flexbox nor focusing on responsive design 
-(target resolution: 1366x768).
+(target resolution: `1366x768`).
+
 This is an advanced transition of learning the fundamentals and the most common
 html elements and css properties. For Key Stage 4 class and above.
 
