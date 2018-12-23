@@ -3,8 +3,8 @@ Web Design collections for teaching Secondary Students @MIS
 
 Making table using HTML & CSS (Planet data)
 
-In this tutorial, we're continuing to make another table intended for our Planet data.
-We're using `nth-child()` selector for alternate row background.
+In this tutorial, we're making another table intended for our Planet data,
+using `nth-child()` selector for alternate row background.
 
 Tags: `html5`, `css`, `table`, `nth-child()`
 
