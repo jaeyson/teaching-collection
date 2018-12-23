@@ -8,6 +8,7 @@ In this tutorial, we're not using flexbox nor focusing on responsive design
 
 This is an advanced transition of learning the fundamentals and the most common
 html elements and css properties. For Key Stage 4 class and above.
+Consider these as an afterschool activity.
 
 - Navigation (sticky)
 - Background video
