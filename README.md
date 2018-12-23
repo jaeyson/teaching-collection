@@ -5,7 +5,7 @@ Note: Please refer to non-`master` branches for teaching collections
 
 Branches:
 
-- `marcom` -
-- `table1` - 
-- `table2` -
-- `table3` -
+- [`marcom`](https://github.com/jaeyson/teaching-collection/tree/marcom) -
+- [`table1`](https://github.com/jaeyson/teaching-collection/tree/table1) - 
+- [`table2`](https://github.com/jaeyson/teaching-collection/tree/table2) -
+- [`table3`](https://github.com/jaeyson/teaching-collection/tree/table3) -
