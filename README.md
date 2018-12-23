@@ -1,7 +1,11 @@
-# Teaching Collection - Table #2
+# Teaching Collection - Table #3: Planet data
 Web Design collections for teaching Secondary Students @MIS
 
-Making table using HTML & CSS (version 2)
-Tags: `html5`, `css`
+Making table using HTML & CSS (Planet data)
 
-[source](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced)
+In this tutorial, we're continuing to make another table intended for our Planet data.
+We're using `nth-child()` selector for alternate row background.
+
+Tags: `html5`, `css`, `table`, `nth-child()`
+
+[source](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Structuring_planet_data)
