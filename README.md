@@ -7,6 +7,8 @@ Web Design collections for teaching Secondary Students @MIS
 
 #### How to make a video overlay (video as background) and make it mobile friendly
 
+Check other lessons [here](https://github.com/jaeyson/teaching-collection)
+
 In this tutorial, we're using flexbox, grid, some JQuery sprinkles and using responsive design.
 
 I encourage to have at least a basic understanding of `flexbox` and `grid` in order to have a smooth learning progress. For Key Stage 4 class and above.
