@@ -7,6 +7,8 @@ Web Design collections for teaching Secondary Students @MIS
 
 #### Making table using HTML & CSS (Planet data)
 
+Check other lessons [here](https://github.com/jaeyson/teaching-collection)
+
 In this tutorial, we're making another table intended for our Planet data,
 using `nth-child()` selector for alternate row background.
 
