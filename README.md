@@ -1,11 +1,32 @@
-# Teaching Collection
+# Teaching Collection - Video Overlay
 Web Design collections for teaching Secondary Students @MIS
 
-Note: Please refer to non-`master` branches for teaching collections
+![alt text][logo]
 
-Branches:
+[logo]: screenshot.png "Familia Burrata Screenshot"
 
-- [`marcom`](https://github.com/jaeyson/teaching-collection/tree/marcom) -
-- [`table1`](https://github.com/jaeyson/teaching-collection/tree/table1) - 
-- [`table2`](https://github.com/jaeyson/teaching-collection/tree/table2) -
-- [`table3`](https://github.com/jaeyson/teaching-collection/tree/table3) -
+#### How to make a video overlay (video as background) and make it mobile friendly
+
+In this tutorial, we're using flexbox, grid, some JQuery sprinkles and using responsive design.
+
+I encourage to have at least a basic understanding of `flexbox` and `grid` in order to have a smooth learning progress. For Key Stage 4 class and above.
+Consider these as an afterschool activity.
+
+Main takeaways:
+
+- Navigation (sticky)
+- Background video
+- `:hover` css pseudo-class
+- `transition` & `transform` css property
+- html entity
+- media queries
+- `$` selector in JQuery
+- JQuery basics
+- CSS Flexbox & Grid
+
+
+Tags: `html5`, `css`, `JQuery`, `responsive`
+
+Photo: [Unsplash](https://source.unsplash.com/)
+
+Video: [Coverr](https://coverr.co)
