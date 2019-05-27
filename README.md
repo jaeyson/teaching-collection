@@ -1,14 +1,19 @@
 # Teaching Collection - Marcom
 Web Design collections for teaching Secondary Students @MIS
 
-Marcom: Subscribe newsletter page
+![alt text][screenshot]
 
-In this tutorial, we're not using flexbox nor focusing on responsive design 
-(target resolution: `1366x768`).
+[screenshot]: screenshot.png "Marcom Screenshot"
 
-This is an advanced transition of learning the fundamentals and the most common
-html elements and css properties. For Key Stage 4 class and above.
-Consider these as an afterschool activity.
+#### Marcom: Subscribe newsletter page
+
+Check other lessons [here](https://github.com/jaeyson/teaching-collection)
+
+In this tutorial, we're not using flexbox nor focusing on responsive design (target resolution: `1366x768`).
+
+This is an advanced transition of learning the fundamentals and the most common html elements and css properties. For Key Stage 4 class and above. Consider these as an afterschool activity.
+
+Main takeaways:
 
 - Navigation (sticky)
 - Background video
