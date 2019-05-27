@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome &middot; Familia Burrata</title>
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700" rel="stylesheet">
+  <style>
+    /*User Story #14: My product landing page should have at least one media query.*/
+    /*User Story #15: My product landing page should utilize CSS flexbox at least once.*/
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      box-sizing: border-box;
+      font-family: "Libre Baskerville", serif;
+      font-size: 62.5%;
+      height: 100%;
+      background: #dcdcdc;
+    }
+
+    /*body::-webkit-scrollbar {
+      width: 0;
+    }*/
+
+    .container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #header {
+      padding: 1rem;
+      position: fixed;
+      z-index: 2;
+      color: white;
+      width: 100vw;
+      transition: .3s;
+    }
+
+    main {
+      font-size: 1.25rem;
+    }
+
+    footer {
+      background: lightgrey;
+      padding: 2rem;
+      text-align: right;
+      font-size: 1rem;
+    }
+
+    footer a {
+      text-decoration: none;
+    }
+
+    #nav-bar {
+      position: relative;
+    }
+
+    #nav-ul-mobile {
+      display: none;
+    }
+
+    #nav-ul {
+      display: flex;
+      flex-direction: row;
+      font-size: 1.5rem;
+    }
+
+    #nav-ul li {
+      list-style: none;
+      margin: 0 .5rem;
+    }
+
+    .toggle {
+      display: none;
+    }
+
+    .close {
+      display: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: white;
+      transition: .2s;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      border-bottom: 3px solid yellow;
+    }
+
+    .nav-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .nav__brand {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .nav__brand span {
+      font-size: 1.5rem;
+    }
+
+    .nav__brand a {
+      text-decoration: none;
+      color: white;
+    }
+
+    #video {
+      object-fit: cover;
+      height: 100vh;
+      width: 100%;
+      opacity: .5;
+      pointer-events: none;
+      position: relative;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100vh, 0 100vh);
+    }
+
+    #video-container {
+      background: rgba(0,0,0, 1);
+    }
+
+    #hero__form{
+      position: absolute;
+      top: 40vh;
+      left: 50vw;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    #hero__form figcaption {
+      font-size: 2rem;
+      font-weight: bolder;
+      padding: 1rem;
+      color: white;
+      width: 23ch;
+      margin-bottom: 1rem;
+    }
+
+    #email,
+    #submit {
+      padding: .75rem;
+      font-family: "Libre Baskerville", serif;
+      font-size: 1.25rem;
+    }
+
+    #email {
+      width: 25ch;
+    }
+
+    #email:focus {
+      border-color: yellow;
+      outline: none;
+    }
+
+    #submit {
+      border: 2px solid yellow;
+      background: yellow;
+      font-weight: bolder;
+      cursor: pointer;
+    }
+
+    .img--overlay {
+      background: rgba(0,0,0, 1);
+    }
+
+    .img--full {
+      height: 100vh;
+      width: 100%;
+      object-fit: cover;
+      opacity: .5;
+    }
+
+    #heritage,
+    #foods,
+    #contact {
+      position: relative;
+    }
+
+
+    .section__description {
+      position: absolute;
+      top: 30vh;
+      left: 50vw;
+      transform: translateX(-50%);
+      color: white;
+    }
+
+    .section__description h1 {
+      color: yellow;
+      font-weight: bolder;
+      border-bottom: 3px solid white;
+      width: 6ch;
+      margin-bottom: 1rem;
+      font-size: 8vh;
+      padding-bottom: 9px;
+      margin-bottom: 10vh;
+    }
+
+    #contact .section__description h1 {
+      width: 10.25ch;
+    }
+
+    .section__description p {
+      line-height: 2;
+    }
+
+    #menu h1 {
+      border-bottom: 3px solid yellow;
+      width: 10.25ch;
+      padding-top: 15vh;
+      margin-bottom: 2rem;
+      font-size: 8vh;
+      padding-bottom: 9px;
+    }
+
+    .cards--grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      justify-content: center;
+      grid-gap: 1rem;
+      margin: 2rem auto;
+    }
+
+    .cards--grid figure {
+      padding: .5rem;
+      text-align: center;
+      background: #e6e6e6;
+      font-size: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .cards--grid figure img {
+      width: 100%;
+    }
+
+    .cards--grid figcaption {
+      padding: 1rem 0;
+    }
+
+    .footer-flex {
+      display: flex;
+      justify-content: space-around;
+    }
+
+/*
+--------------------------------------------
+--------------------------------------------
+*/    
+
+    @media only screen and (max-width: 720px) {
+
+      #nav-ul {
+        display: none;
+      }
+
+      #nav-ul-mobile {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: grey;
+        z-index: 3;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #nav-ul-mobile li {
+        padding: 2.5rem 0;
+        font-size: 2rem;
+        list-style: none;
+      }
+
+      #nav-ul-mobile a {
+        padding: 10px 5px;
+        border: 5px solid yellow;
+        text-decoration: none;
+        color: white;
+      }
+
+      .toggle {
+        display: block;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
+
+      .close {
+        display: none;
+        position: fixed;
+        z-index: 4;
+        background: transparent;
+        border: none;
+        top: 3%;
+        right: 3%;
+        cursor: pointer;
+      }
+
+      .container {
+        max-width: 80vw;
+      }
+
+      #hero__form {
+        top: 30vh;
+      }
+
+      #hero__form figcaption {
+        width: 80vw;
+        margin: 0 auto;
+      }
+
+      #email,
+      #submit {
+        display: block;
+        width: 80vw;
+        margin: .5rem auto;
+      }
+
+      #email {
+        font-size: 4.5vw;
+      }
+
+      #email[type="email"] {
+        text-align: center;
+      }
+
+      .cards--grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-content: center;
+        grid-gap: 1rem;
+        margin: 2rem auto;
+      }
+
+      .footer-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-flex span {
+        text-align: left;
+        margin: 1rem auto;
+      }
+
+      .section__description {
+        top: 20vh;
+        width: 75vw;
+        font-size: 1rem;
+      }
+
+      .section__description h1 {
+        margin-bottom: 5vh;
+      }
+
+      #menu h1,
+      #contact .section__description h1 {
+        width: 5.5ch;
+      }
+    }
+
+    @media only screen and (min-width: 720.9999px) and (max-width: 1280px) {
+      .container {
+        max-width: 80vw;
+      }
+
+
+      #nav-ul,
+      .nav__brand span {
+        font-size: 1.1rem;
+        text-align: center;
+      }
+
+      #header-img {
+        transform: scale(.75) translateY(3px);
+      }
+
+      .section__description h1 {
+        margin-bottom: 5vh;
+      }
+
+      .section__description {
+        width: 75vw;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- User Story #1: My product landing page should have a header element with a corresponding id="header". -->
+  <header id="header">
+  <div class="container">
+    <div class="nav-flex">
+    <!-- User Story #2: I can see an image within the header element with a corresponding id="header-img". A company logo would make a good image here. -->
+    <div class="nav__brand">
+      <img id="header-img" src="https://img.icons8.com/ios/40/FFFFFF/restaurant-building-filled.png">
+      <a href="#">
+        <span>Familia Burrata</span>
+      </a>
+    </div>
+
+    <!-- User Story #3: Within the #header element I can see a nav element with a corresponding id="nav-bar". -->
+    <nav id="nav-bar">
+      <!-- User Story #4: I can see at least three clickable elements inside the nav element, each with the class nav-link. -->
+      <!-- User Story #5: When I click a .nav-link button in the nav element, I am taken to the corresponding section of the landing page. -->
+      <!-- User Story #13: The navbar should always be at the top of the viewport. -->
+      <ul id="nav-ul">
+        <li><a class="nav-link" href="#heritage">Our brand</a></li>
+        <li><a class="nav-link" href="#menu">Dishes</a></li>
+        <li><a class="nav-link" href="#contact">Contact Us</a></li>
+      </ul>
+
+      <button class="toggle">
+        <img src="https://img.icons8.com/pastel-glyph/40/FFFFFF/hamburger.png">
+      </button>
+
+      <button class="close">
+        <img src="https://img.icons8.com/dotty/60/FFFFFF/restaurant.png">
+      </button>
+
+      <ul id="nav-ul-mobile">
+        <li><a class="nav-link-mobile" href="#">Home</a></li>
+        <li><a class="nav-link-mobile" href="#heritage">Our brand</a></li>
+        <li><a class="nav-link-mobile" href="#menu">Dishes</a></li>
+        <li><a class="nav-link-mobile" href="#contact">Contact Us</a></li>
+      </ul>
+      
+    </nav>
+    </div>
+  </div>
+  </header>
+
+  <div id="video-container">
+    <!-- User Story #6: I can watch an embedded product video with id="video". -->
+    <video id="video" autoplay loop muted>
+      <source src="https://res.cloudinary.com/imgursoyjean/video/upload/v1552608011/coverr.co/Pasta-Burrata--lowres.mp4" type="video/mp4">
+      Sorry, your browser doesn't support embedded videos.
+    </video>
+  </div>
+
+
+  <div id="hero__form">
+    <figcaption>
+      Deliciously prepped, you'll change your family tree.
+    </figcaption>
+
+    <!-- User Story #7: My landing page has a form element with a corresponding id="form". -->
+    <!-- User Story #12: When I click the #submit element, the email is submitted to a static page (use this mock URL: https://www.freecodecamp.com/email-submit) that confirms the email address was entered and that it posted successfully. -->
+    <form action="https://www.jaeyson.com" id="form">
+      <!-- User Story #8: Within the form, there is an input field with id="email" where I can enter an email address. -->
+      <!-- User Story #9: The #email input field should have placeholder text to let the user know what the field is for. -->
+      <!-- User Story #10: The #email input field uses HTML5 validation to confirm that the entered text is an email address. -->
+      <input type="email" name="email" id="email" placeholder="Your email, Signore/Signora" required>
+      <!-- User Story #11: Within the form, there is a submit input with a corresponding id="submit". -->
+      <input id="submit" type="submit" value="Subscribe">
+    </form>
+  </div>
+
+  <main>
+    <section id="heritage">
+      <div class="img--overlay">
+        <img class="img--full" src="https://source.unsplash.com/4nXkhLCrkLo" alt="man's hand holding a pasta">
+      </div>
+        <div class="section__description">
+          <h1>Heritage</h1>
+          <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+          <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery.</p>
+        </div>
+    </section>
+
+    <section id="menu" class="container">
+      <h1>Try our dishes</h1>
+      <div class="cards--grid">
+        <figure>
+          <img src="https://source.unsplash.com/PLyJqEJVre0/500x500" alt="Capellini in tomato sauce">
+          <figcaption>
+            Capellini in tomato sauce
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://source.unsplash.com/12eHC6FxPyg/500x500" alt="Pesto pasta with sliced tomatoes served on white ceramic plate">
+          <figcaption>
+            Pesto pasta with tomatoes
+          </figcaption>
+        </figure>
+        
+        <figure>
+          <img src="https://source.unsplash.com/J9lD6FS6_cs/500x500" alt="Burger with side dish">
+          <figcaption>
+            Burger with side dish
+          </figcaption>
+        </figure>
+        
+        <figure>
+          <img src="https://source.unsplash.com/TxQSdnp6D_k/500x500" alt="Pizza">
+          <figcaption>
+            Pizza
+          </figcaption>
+        </figure>
+        
+        <figure>
+          <img src="https://source.unsplash.com/inDRPMBfX8M/500x500" alt="Vegetable salad with grilled salmon">
+          <figcaption>
+            Vegetable salad with grilled salmon
+          </figcaption>
+        </figure>
+        
+        <figure>
+          <img src="https://source.unsplash.com/6rtm6a_aVyE/500x500" alt="Omelette">
+          <figcaption>
+            Omelette
+          </figcaption>
+        </figure>
+        
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="img--overlay">
+        <img class="img--full" src="https://source.unsplash.com/nvsHAsuFC54" alt="man's hand holding a pasta">
+      </div>
+        <div class="section__description">
+          <h1>Anything else?</h1>
+          <p>Currently we're working hard to make our site up and running. While you wait, you might want to subscribe to our newsletter for any authentic or homemade dishes that we'll add up in the future.</p>
+        </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+
+      <div class="footer-flex">
+        <span>
+          Familia Burrata&trade; 2019
+        </span>
+
+        <span>
+          Credits:
+          <a href="https://icons8.com/icon/91791/restaurant-building-filled" target="_blank noopener noreferrer">logo</a> &middot;
+          <a href="https://unsplash.com">photos</a> &middot;
+          <a href="https://coverr.co">videos</a>
+        </span>
+      </div>
+
+    </div>
+    
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // change navbar background when being scrolled down
+      $(window).scroll(function() {
+        if ($(this).scrollTop()>100) {
+          $("#header").css("background","#000000");
+        } else {
+          $("#header").css("background","transparent");
+        }
+       });
+
+      $(".toggle").click(function() {
+        $("#nav-ul-mobile").css("display", "flex");
+        $(".close").show();
+      });
+
+      $(".close").click(function() {
+        $("#nav-ul-mobile").hide();
+        $(".close").hide();
+      });
+
+      $(".nav-link-mobile").click(function () {
+        $("#nav-ul-mobile").hide();
+        $(".close").hide();
+      });
+
+    });
+
+
+  </script>
+</body>
+</html>
