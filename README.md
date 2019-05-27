@@ -7,6 +7,8 @@ Web Design collections for teaching Secondary Students @MIS
 
 #### Making table using HTML & CSS (version 2)
 
+Check other lessons [here](https://github.com/jaeyson/teaching-collection)
+
 This is an advanced transition of learning the fundamentals and the most common html elements and css properties. For Key Stage 4 class and above. Consider these as an afterschool activity.
 
 Tags: `html5`, `css`
